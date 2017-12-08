@@ -9,6 +9,9 @@ If no sound detected for last 10 minutes, mark the room available (configurable)
 import RPi.GPIO as GPIO
 import time
 
+#Integration with Google Calendar
+import GoogleCalendarDemo
+
 channel = 17
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
@@ -32,4 +35,9 @@ while True:
     diff = datetime.now() - tracker["last_time_sound_detected"]
     silence_duration = diff.seconds
     print("Room is found silent for", silence_duration)
+
+    if silence_duration >= 10:
+        print("Meeting from conference room calendar will be auto removed")
+        GoogleCalendarDemo.main()
+        print("Meeting removed from calendar")
     time.sleep(10)
