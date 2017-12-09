@@ -1,4 +1,4 @@
-# lastminuteconferenceroom
+# No more booked and vacant Conference Rooms!
 
 Problem - Have you ever faced the situation when you need conference room and calendar shows no room available. 
 But actually you know if you walk around the building, you will find booked and vacant rooms?
